@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "277322682454",
+    "project_id": "optimal-tide-298110",
+    "storage_bucket": "optimal-tide-298110.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277322682454:android:0b196615fbeeac6fe3ebf7",
+        "android_client_info": {
+          "package_name": "com.yash1234"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "277322682454-s6c3s87pbrvccf5hmuk5so1o88bq67mk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjXw35VIApXILSylpGd1gSFp9RxuFP2iA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "277322682454-s6c3s87pbrvccf5hmuk5so1o88bq67mk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
