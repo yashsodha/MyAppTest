@@ -6,32 +6,30 @@ import {
     View,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import AsyncStorage from '@react-native-community/async-storage';
 import OrderScreen from '../screens/OrderScreen';
+import MapScreen from '../screens/MapScreen';
+
+
 import LoginScreen from '../screens/authentication/Login';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLogged } from '../redux/action/authenticationActions';
 
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
 
 const AppStacks = () => {
     return (
             <Stack.Navigator
-                screenOptions={{ headerShown: false }}
-            >
+                screenOptions={{ headerShown: false }}>
                     <Stack.Screen name="OrderScreen" component={OrderScreen} />
-
+                    <Stack.Screen name="MapScreen" component={MapScreen} />
             </Stack.Navigator>
-
-
-
     );
 };
+
 const AppNavigation = () => {
     const dispatch = useDispatch();
     const [appLoading, setLoading] = useState(true)

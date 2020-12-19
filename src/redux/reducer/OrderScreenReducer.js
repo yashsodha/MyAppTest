@@ -1,53 +1,32 @@
 import * as types from '../action/actionTypes';
 const initialState = {
-    finalAnswere: "hello",
     token: null,
-    isLoadingVideo: false,
-    loadMoreVideo: false,
+    pendingOrders: [],
+    isLoadingOrders: false
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
 
-        case `${types.GET_ORDERS_TOKEN}_PENDING`:
+        case `${types.GET_ORDERS}_PENDING`:
             return {
                 ...state,
-                videos: [],
-                isLoadingVideo: true
+                pendingOrders: [],
+                isLoadingOrders: true
             }
-        case `${types.GET_ORDERS_TOKEN}_FULFILLED`:
-            console.log("yes",action)
+        case `${types.GET_ORDERS}_FULFILLED`:
+            console.log("yes", action)
             return {
                 ...state,
-                token: action.payload,
-                isLoadingVideo: false
+                pendingOrders: action.payload.data,
+                isLoadingOrders: false
             }
-        case `${types.GET_ORDERS_TOKEN}_REJECTED`:
+        case `${types.GET_ORDERS}_REJECTED`:
             return {
                 ...state,
-                isLoadingVideo: false
+                isLoadingOrders: false
             }
 
-
-            case `${types.GET_ORDERS}_PENDING`:
-                return {
-                    ...state,
-                    isLoadingVideo: true
-                }
-            case `${types.GET_ORDERS}_FULFILLED`:
-                console.log("yes",action)
-                return {
-                    ...state,
-                    isLoadingVideo: false
-                }
-            case `${types.GET_ORDERS}_REJECTED`:
-                return {
-                    ...state,
-                }
-
-
-
-    
         default:
             return state;
     }

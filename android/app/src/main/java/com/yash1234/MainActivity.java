@@ -1,6 +1,7 @@
 package com.yash1234;
 
 import com.facebook.react.ReactActivity;
+import android.content.Intent;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +13,11 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "MyAppTest";
   }
+
+  @Override
+    public void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+    }
+
 }

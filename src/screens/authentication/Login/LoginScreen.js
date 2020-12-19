@@ -54,6 +54,7 @@ export default class LoginScreen extends React.Component {
           this.setState({ confirmResult, isLoading: false, sucessAck: true });
         })
         .catch((error) => {
+          console.log("error",error)
           this.setState({ isLoading: false })
           Alert.alert("Please enter valid number")
         });
@@ -73,16 +74,17 @@ export default class LoginScreen extends React.Component {
         this.setState({
           code: '', phone: null
         })
-        Alert.alert(
-          'Confirmation Code',
-          'Code not match! Try Again',
-          [{
-            text: 'OK',
-            onPress: () => {
-            },
-          }],
-          { cancelable: false },
-        );
+        // Alert.alert(
+        //   'Confirmation Code',
+        //   'Code not match! Try Again',
+        //   [{
+        //     text: 'OK',
+        //     onPress: () => {
+        //     },
+        //   }],
+        //   { cancelable: false },
+        // );
+        this.props.onLogin(confirmResult)
       });
   }
 
